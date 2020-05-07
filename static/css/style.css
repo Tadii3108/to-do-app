@@ -1,3 +1,15 @@
+* {
+    box-sizing: border-box;
+}
+
+.header {
+    padding: 10px;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+    font-size: 20px;
+}
+
 h1 {
     text-align: center;
     text-transform: uppercase;
@@ -27,4 +39,3 @@ button#dlt {
     font-size: 12px;
     transition-duration: 0.4s;
 }
-

@@ -7,25 +7,29 @@
 </head>
 
 <body>
+    <div class="header">
+        <h1>Things to do</h1>
+    </div>
 
-    <h1>Things to fucks with</h1>
+        <form action="/addTodo/" method="post">{% csrf_token %}
+            <input type="text" name="content"/>
+            <button id="add" type="submit">Add</button>
+        </form>
 
-    <form action="/addTodo/" method="post">{% csrf_token %}
-        <input type="text" name="content" placeholder="Enter Item"/>
-        <button id="add" type="submit">Add</button>
-    </form>
-    
-    <ul>
-        {% for todo_item in all_items %}
-            <li>{{ todo_item.content }}
-                <form id="dlt" action="/deleteTodo/{{todo_item.id}}/"
-                style="display:inline;"
-                method="post">{% csrf_token %}
-                    <button id="dlt" type="submit">Delete</button>
-                </form>
-            </li>
-        {% endfor %}
-    </ul>
+    <div class="item-input">
+        <ul>
+            {% for todo_item in all_items %}
+                <li>{{ todo_item.content }}
+                    <form id="dlt" action="/deleteTodo/{{todo_item.id}}/"
+                    style="display:inline;"
+                    method="post">{% csrf_token %}
+                        <button id="dlt" type="submit">Delete</button>
+                    </form>
+                </li>
+            {% endfor %}
+        </ul>
+
+    </div>
 
 </body>
 </html>
