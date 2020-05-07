@@ -11,25 +11,33 @@
         <h1>Things to do</h1>
     </div>
 
-        <form action="/addTodo/" method="post">{% csrf_token %}
-            <input type="text" name="content"/>
-            <button id="add" type="submit">Add</button>
-        </form>
-
     <div class="item-input">
         <ul>
             {% for todo_item in all_items %}
-                <li>{{ todo_item.content }}
-                    <form id="dlt" action="/deleteTodo/{{todo_item.id}}/"
-                    style="display:inline;"
-                    method="post">{% csrf_token %}
+                <li class="list">
+                    
+                    <div class="item-content">{{ todo_item.content }}</div>
+                    
+                    <div class="delete">
+                        <form id="dlt" action="/deleteTodo/{{todo_item.id}}/"
+                        style="display:inline;"
+                        method="post">{% csrf_token %}
                         <button id="dlt" type="submit">Delete</button>
-                    </form>
+                        </form>
+                    </div>  
                 </li>
             {% endfor %}
         </ul>
-
     </div>
+
+    <form class="form" action="/addTodo/" method="post">{% csrf_token %}
+        <div class="task">
+            <input class="content" type="text" name="content" placeholder="Enter Item"/>
+        </div>
+        <div class="add">
+            <button id="add" type="submit">Add</button>
+        </div>
+    </form>
 
 </body>
 </html>

@@ -30,6 +30,7 @@ button#add {
     display: inline-block;
     font-size: 12px;
     transition-duration: 0.4s;
+    width: 100%;
 }
 
 button#dlt {
@@ -38,4 +39,29 @@ button#dlt {
     border: 2px solid #555555;
     font-size: 12px;
     transition-duration: 0.4s;
+}
+
+.form {
+    display: grid;
+    grid-template-columns: auto 100px;
+    padding: 5px;
+}
+
+.task {
+    padding: 5px;
+    width: 90%;
+}
+
+.content {
+    width: 100%;
+}
+
+.list {
+    display: grid;
+    grid-template-columns: auto 100px;
+    padding: 5px;
+}
+
+.item-input {
+    background-color: beige;
 }
