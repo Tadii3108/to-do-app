@@ -1,0 +1,30 @@
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+input[type=text] {
+    border: none;
+    border-bottom: 2px solid rgb(42, 126, 34);
+}
+
+button#add {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 27px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    transition-duration: 0.4s;
+}
+
+button#dlt {
+    background-color: #555555;
+    color: white;
+    border: 2px solid #555555;
+    font-size: 12px;
+    transition-duration: 0.4s;
+}
+

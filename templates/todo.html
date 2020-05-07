@@ -1,18 +1,31 @@
-<h1>Things to fucks with</h1>
+{% load static %}
 
-<form action="/addTodo/" method="post">{% csrf_token %}
-    <input type="text" name="content"/>
-    <input type="submit" value="Add"/>
-</form>
+<!DOCTYPE html>
+<head>
+    <title>{% block titile %} {% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+</head>
 
-<ul>
-    {% for todo_item in all_items %}
-        <li>{{ todo_item.content }}
-            <form action="/deleteTodo/{{todo_item.id}}/"
-            style="display:inline;"
-            method="post">{% csrf_token %}
-                <input type="submit" value="Delete"/>
-            </form>
-        </li>
-    {% endfor %}
-</ul>
+<body>
+
+    <h1>Things to fucks with</h1>
+
+    <form action="/addTodo/" method="post">{% csrf_token %}
+        <input type="text" name="content" placeholder="Enter Item"/>
+        <button id="add" type="submit">Add</button>
+    </form>
+    
+    <ul>
+        {% for todo_item in all_items %}
+            <li>{{ todo_item.content }}
+                <form id="dlt" action="/deleteTodo/{{todo_item.id}}/"
+                style="display:inline;"
+                method="post">{% csrf_token %}
+                    <button id="dlt" type="submit">Delete</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
