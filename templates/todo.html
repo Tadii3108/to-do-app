@@ -22,9 +22,16 @@
                         <form id="dlt" action="/deleteTodo/{{todo_item.id}}/"
                         style="display:inline;"
                         method="post">{% csrf_token %}
-                        <button id="dlt" type="submit">Delete</button>
+                        <button id="dlt" type="submit">x</button>
                         </form>
-                    </div>  
+                    </div>
+                    <div class="edit">
+                        <form id="btn" action="/editTodo/{{todo_item.id}}/"
+                        style="display:inline;"
+                        method="post">{% csrf_token %}
+                        <button type="button" id="btn">Edit</button>
+                        </form>
+                    </div> 
                 </li>
             {% endfor %}
         </ul>

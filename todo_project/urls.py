@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 # import myView function from views.py within hello directory
 from hello.views import myView
-from todo.views import todoView, addTodo, deleteTodo
+from todo.views import todoView, addTodo, deleteTodo, editTodo
 
 # a list that manages information about what django should do with each url
 urlpatterns = [
@@ -26,4 +26,5 @@ urlpatterns = [
     path('todo/', todoView),
     path('addTodo/', addTodo),
     path('deleteTodo/<int:todo_id>/', deleteTodo),
+    path('editTodo/<int:todo_id>/', editTodo),
 ]
