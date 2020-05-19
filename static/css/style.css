@@ -5,8 +5,8 @@
 .header {
     padding: 10px;
     text-align: center;
-    background: #1abc9c;
-    color: white;
+    background: #dec4a0;
+    color: black;
     font-size: 20px;
 }
 
@@ -16,8 +16,10 @@ h1 {
 }
 
 input[type=text] {
-    border: none;
-    border-bottom: 2px solid rgb(42, 126, 34);
+    border: 2px solid rgb(42, 126, 34);
+    border-radius: 4px;
+    /*border: none;
+    border-bottom: 2px solid rgb(42, 126, 34);*/
 }
 
 button#add {
@@ -71,5 +73,6 @@ button#btn {
 }
 
 .item-input {
-    background-color: beige;
+    background-color: rgba(0, 0, 0, 0.89);
+    color: white;
 }
