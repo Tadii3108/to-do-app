@@ -4,12 +4,48 @@
 <head>
     <title>{% block titile %} {% endblock %}</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+    <style>
+        .header {
+            padding: 10px;
+            text-align: center;
+            background: #dec4a0;
+            color: black;
+            font-size: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            text-transform: uppercase;
+            text-shadow: 2px 2px #c23131;
+        }
+
+        input[type=text] {
+            border: 2px solid rgb(42, 126, 34);
+            border-radius: 4px;
+            padding: 4px;
+        }
+
+        .item-input {
+            background-color: rgba(0, 0, 0, 0.89);
+            color: white;
+        }
+    </style>
 </head>
 
 <body class="body" style="background-image: url(../static/img/beige-analog.jpg); background-repeat: no-repeat; background-size: inherit; background-position: center center;">
     <div class="header">
-        <h1>My Todo List</h1>
+        {% now "jS F Y" %}
+        <h1>What do you want to get done today?</h1>
     </div>
+
+    <form class="form" action="/addTodo/" method="post">{% csrf_token %}
+        <div class="task">
+            <input class="content" type="text" name="content" placeholder="Enter Item"/>
+        </div>
+        <div class="add">
+            <button id="add" type="submit">Add</button>
+        </div>
+    </form>
 
     <div class="item-input">
         <ul>
@@ -29,15 +65,5 @@
             {% endfor %}
         </ul>
     </div>
-
-    <form class="form" action="/addTodo/" method="post">{% csrf_token %}
-        <div class="task">
-            <input class="content" type="text" name="content" placeholder="Enter Item"/>
-        </div>
-        <div class="add">
-            <button id="add" type="submit">Add</button>
-        </div>
-    </form>
-
 </body>
 </html>

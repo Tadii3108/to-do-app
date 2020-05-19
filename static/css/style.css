@@ -2,26 +2,6 @@
     box-sizing: border-box;
 }
 
-.header {
-    padding: 10px;
-    text-align: center;
-    background: #dec4a0;
-    color: black;
-    font-size: 20px;
-}
-
-h1 {
-    text-align: center;
-    text-transform: uppercase;
-}
-
-input[type=text] {
-    border: 2px solid rgb(42, 126, 34);
-    border-radius: 4px;
-    /*border: none;
-    border-bottom: 2px solid rgb(42, 126, 34);*/
-}
-
 button#add {
     background-color: #4CAF50;
     border: none;
@@ -70,9 +50,4 @@ button#btn {
     display: grid;
     grid-template-columns: auto 100px;
     padding: 5px;
-}
-
-.item-input {
-    background-color: rgba(0, 0, 0, 0.89);
-    color: white;
 }
